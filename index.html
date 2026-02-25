@@ -5,47 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Øving til kartlegging 1. trinn</title>
     <style>
+        /* Bakgrunn og font */
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        h1 {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Arial', sans-serif; /* Barnevennlig font */
+            background-color: #fff9e6; /* Myk gul farge */
             color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 50px 20px;
         }
+
+        /* Overskrift med litt farge */
+        h1 {
+            color: #ff6b6b;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+
+        /* Container for logoer */
         .logo-container {
             display: flex;
+            flex-wrap: wrap; /* Gjør at de stabler seg på små skjermer */
             justify-content: center;
-            gap: 30px; /* Mellomrom mellom bildene */
-            margin-top: 40px;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
-        .logo-container img {
-            max-width: 200px; /* Juster størrelsen på logoene */
+
+        /* Styling av boksene rundt bildene */
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 4px solid transparent;
+        }
+
+        /* Spesifikke farger for hver knapp */
+        .card.lesing:hover { border-color: #4ecdc4; transform: scale(1.1) rotate(-2deg); }
+        .card.regning:hover { border-color: #ff9f43; transform: scale(1.1) rotate(2deg); }
+
+        .card img {
+            max-width: 250px;
+            width: 100%;
             height: auto;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            display: block;
         }
-        .logo-container img:hover {
-            transform: translateY(-5px);
+
+        /* Tekst under bildene (valgfritt) */
+        .card p {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #555;
         }
+
         a {
-            text-decoration: none; /* Fjerner understrek fra lenker */
-            color: inherit; /* Beholder tekstfargen */
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Litt diskret animasjon på siden når den lastes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-container {
+            animation: fadeIn 1s ease-out;
         }
     </style>
 </head>
 <body>
 
-    <h1>Øving til kartlegging 1. trinn</h1>
+    <h1>Klar for øving? 🚀</h1>
 
     <div class="logo-container">
         <a href="https://77tor.github.io/Les-1-udir/" target="_blank">
-            <img src="lesing.png" alt="Lesing logo">
+            <div class="card lesing">
+                <img src="lesing.png" alt="Lesing logo">
+                <p>Lesing</p>
+            </div>
         </a>
+
         <a href="https://77tor.github.io/Reg-1-udir/" target="_blank">
-            <img src="regning.png" alt="Regning logo">
+            <div class="card regning">
+                <img src="regning.png" alt="Regning logo">
+                <p>Regning</p>
+            </div>
         </a>
     </div>
 
